@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdilServizi</title>
+
+    <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo_img"></a>
+        <!-- <a href="index.html" class="logo">EDILSERVIZI</a> -->
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- bottone del menu -->
+        <label for="menu-BTN" class="menu_icon">
+            <span class="nav_icon"></span> <!-- icona del menu -->
+        </label>
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="servizi.html">SERVIZI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="about.html">INFO</a></li>
+        </ul>
+    </header>
+
+    <!-- ----------------- BODY ----------------- -->
+    <main class="main">
+        <!-- OLD TITLE -->
+        <!-- <div class="wrapper">
+            <div>
+                <h3 class="color_red">EDILSERVIZI</h2>
+                    <h1 class="color_red">PICCOLA MANUTENZIONE</h1>
+                    <h3>Benvenuti sul sito di EDILSERVIZI - Specializzati in lavori di piccola manutenzione</h3>
+            </div>
+        </div> -->
+
+        <!-- NEW TITLE -->
+        <section class="title_bg">
+            <h1 class="big_title">EDILSERVIZI</h1>
+            <div class="brick x1 y1"></div>
+            <div class="brick x2 y1"></div>
+            <div class="brick x3 y1"></div>
+            <div class="brick x4 y1"></div>
+            <div class="brick x1b y2"></div>
+            <div class="brick x2b y2"></div>
+            <div class="brick x3b y2"></div>
+            <div class="brick x4b y2"></div>
+            <div class="brick x1 y3"></div>
+            <div class="brick x2 y3"></div>
+            <div class="brick x3 y3"></div>
+            <div class="brick x4 y3"></div>
+        </section>
+
+        <div id="home_container">
+            <div class="stage_animation">
+                <h1 class="color_red"> <!-- facoltativo (sia l'h3 che la classe) -->
+                    <p>LAVORI DI PICCOLA MANUTENZIONE &#8213 LAVORI DI PICCOLA MANUTENZIONE &#8213 </p>
+                    <p>LAVORI DI PICCOLA MANUTENZIONE &#8213 LAVORI DI PICCOLA MANUTENZIONE &#8213 </p>
+                </h1>
+            </div>
+        </div>
+
+        <div class="intro">
+            <!-- titolo -->
+            <span class="titolo">
+                <h2 class="bold">COS'È EDILSERVIZI?</h2>
+            </span>
+
+            <!-- immagine -->
+            <div id="about">
+            </div>
+
+            <!-- introduzione sull'azienda -->
+            <p>EDILSERVIZI è un'impresa edile che si occupa di piccoli lavori di manutenzione e restauro,
+                garantendo una grande qualità della prestazione ad un prezzo ridotto.</p>
+        </div>
+
+        <!-- DISPLAY DI 4 SERVIZI -->
+        <div class="container_imgs">
+            <!-- titolo -->
+            <span class="titolo color_red">
+                <h1 class="bold">I NOSTRI SERVIZI:</h1>
+            </span>
+
+            <!-- 1° immagine -->
+            <div id="img_box_1">
+                <!-- IMG-BOX<br>(servizio-1) -->
+            </div>
+            <p class="p_img_left"><strong>RISANAMENTO MURA:</strong><br>EDILSERVIZI è in grado di risanarti le pareti di
+                casa.</p>
+
+            <!-- 2° immagine -->
+            <p class="p_img_right"><strong>MODIFICA PARETI INTERNE:</strong><br>Modifichiamo anche pareti interne.</p>
+            <div id="img_box_2">
+                <!-- IMG-BOX<br>(servizio-2) -->
+            </div>
+
+            <!-- 3° immagine -->
+            <div id="img_box_3">
+                <!-- IMG-BOX<br>(servizio-3) -->
+            </div>
+            <p class="p_img_left"><strong>RISTRUTTURAZIONE PAVIMENTAZIONE:</strong><br>Risistemiamo i pavimenti.</p>
+
+            <!-- conclusione con frase -->
+            <span class="titolo">
+                <h4>E tutto il necessario per la manutenzione</h4>
+            </span>
+        </div>
+
+
+        <!-- CONTATTI -->
+        <div class="contact_box">
+            <h1 class="title">DOVE TROVARCI</h1>
+            <ul class="contatti">
+                <li class="fa fa-map-marker">Malo, Via Schio 52</li>
+                <li class="fa fa-phone">+39 389 204 4898</li>
+                <li class="fa fa-envelope">edilservizi.m@gmail.com</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ----------------- FOOTER ----------------- -->
+    <footer class="footer">
+        <div class="copiright">© Copiright - EDILSERVIZI - P.IVA 04389100241 - Via Schio 52 36034, Malo(VI)</div>
+    </footer>
+
+
+    <!-- ----------------- SCRIPT ----------------- -->
+    <script>
+
+        //---------------------------------- mattoni che cadono ----------------------------------
+        let bricks = document.querySelectorAll(".brick");
+
+        console.log(bricks);
+
+        for (let i = 0; i < bricks.length; i++) {
+            bricks[i].style.animationDelay = i + "s";
+        }
+
+        //---------------------------------- navbar che scompare ----------------------------------
+        var prevScrollpos = window.pageYOffset;
+
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector("header");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+
+            /* if scrolling down, let it scroll out of view as normal */
+            if (prevScrollpos <= currentScrollPos) {
+                headerDiv.classList.remove("fixedToTop");
+                headerDiv.style.top = "-27.2rem";
+            }
+            /* otherwise if we're scrolling up, fix the nav to the top */
+            else {
+                headerDiv.classList.add("fixedToTop");
+                headerDiv.style.top = "0";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+
+</html>

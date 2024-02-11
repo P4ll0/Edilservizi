@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdilServizi - servizi</title>
+
+    <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/servizi.css">
+</head>
+
+<body>
+    <!-- ----------------- HEADER ----------------- -->
+    <header class="header">
+        <a href="index.html" class="logo_img"></a>
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- bottone del menu -->
+        <label for="menu-BTN" class="menu_icon">
+            <span class="nav_icon"></span> <!-- icona del menu -->
+        </label>
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="servizi.html">SERVIZI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="about.html">INFO</a></li>
+        </ul>
+    </header>
+
+
+
+    <!-- ----------------- BODY ----------------- -->
+    <main class="main">
+        <div id="container">
+            <div class="stage_animation">
+                <p>I NOSTRI SERVIZI &#8213 I NOSTRI SERVIZI &#8213 </p>
+                <p>I NOSTRI SERVIZI &#8213 I NOSTRI SERVIZI &#8213 </p>
+            </div>
+        </div>
+
+        <!-- body content -->
+        <!-- INTRODUZIONE AI SERVIZI CHE FACCIAMO -->
+        <div id="intro">
+            <p><strong>EDILSERVIZI</strong> è l'impresa edile di fiducia per tutti i tuoi progetti di ristrutturazione e
+                manutenzione.
+                <br><br>
+                Specializzati in <strong>interventi di piccola manutenzione</strong>, offriamo una vasta gamma di
+                servizi per migliorare e preservare gli ambienti domestici e commerciali. Dalla modifica delle pareti
+                interne alla
+                ristrutturazione della pavimentazione e al risanamento delle mura, siamo in grado di gestire ogni fase
+                del processo con <strong>professionalità e precisione</strong>.
+            </p>
+        </div>
+
+        <!-- DISPLAY DEI SERVIZI -->
+        <div class="servizi">
+
+            <div id="bg_img_1">
+                <div class="box">
+                    <h1>RISANAMENTO MURATURE</h1>
+                    <p>Il nostro servizio di Risanamento Mura rappresenta la soluzione completa per ripristinare e
+                        migliorare la struttura delle pareti con professionalità ed esperienza. Affidati alla nostra
+                        impresa edile per interventi mirati che comprendono l'analisi approfondita delle condizioni
+                        delle pareti, l'eliminazione di umidità, muffe o crepe, e l'applicazione di tecniche avanzate di
+                        riparazione e isolamento.</p>
+                    <button>SCOPRI</button>
+                </div>
+            </div>
+
+            <div id="bg_img_2">
+                <div class="box">
+                    <h1>MODIFICA PARETI INTERNE</h1>
+                    <p>Offriamo un servizio professionale di modifica pareti interne, trasformando
+                        gli ambienti della tua casa o ufficio secondo le tue esigenze e gusti. Siamo pronti a realizzare
+                        progetti personalizzati, ottimizzando gli spazi e conferendo un nuovo
+                        stile agli interni. Affidati a noi per trasformare la tua abitazione in uno spazio unico e
+                        accogliente, soddisfacendo ogni tua richiesta di modifica delle pareti interne.</p>
+                    <button>SCOPRI</button>
+                </div>
+            </div>
+
+            <div id="bg_img_3">
+                <div class="box">
+                    <h1>RISTRUTTURAZIONE PAVIMENTAZIONE</h1>
+                    <p>Offriamo anche un servizio completo di ristrutturazione pavimentazione, garantendo qualità e
+                        professionalità in ogni fase del progetto. Dal rimuovere vecchi rivestimenti all'installazione
+                        di nuovi pavimenti, ci occupiamo di ogni dettaglio per trasformare gli ambienti secondo le tue
+                        esigenze. Grazie alla nostra esperienza consolidata, garantiamo risultati duraturi e
+                        esteticamente apprezzabili. Affidati a noi per dare una nuova
+                        vita ai tuoi spazi abitativi o commerciali attraverso un servizio di ristrutturazione
+                        pavimentazione su misura e di alto livello.</p>
+                    <button>SCOPRI</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- ----------------- FOOTER ----------------- -->
+    <footer class="footer">
+        <div class="copiright">© Copiright - EDILSERVIZI - P.IVA 04389100241 - Via Schio 52 36034, Malo(VI)</div>
+    </footer>
+
+
+
+
+    <!-- ----------------- SCRIPT ----------------- -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector("header");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+
+            /* if scrolling down, let it scroll out of view as normal */
+            if (prevScrollpos <= currentScrollPos) {
+                headerDiv.classList.remove("fixedToTop");
+                headerDiv.style.top = "-27.2rem";
+            }
+            /* otherwise if we're scrolling up, fix the nav to the top */
+            else {
+                headerDiv.classList.add("fixedToTop");
+                headerDiv.style.top = "0";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+
+</html>

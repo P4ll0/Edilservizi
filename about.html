@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdilServizi - info</title>
+
+    <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/about.css">
+</head>
+
+<body>
+    <!-- ----------------- HEADER ----------------- -->
+    <header class="header">
+        <a href="index.html" class="logo_img"></a>
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- bottone del menu -->
+        <label for="menu-BTN" class="menu_icon">
+            <span class="nav_icon"></span> <!-- icona del menu -->
+        </label>
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="servizi.html">SERVIZI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="about.html">INFO</a></li>
+        </ul>
+    </header>
+
+    <!-- ----------------- BODY ----------------- -->
+    <main class="main">
+        <div id="container">
+            <div class="stage_animation">
+                <p>CHI SIAMO &#8213 CHI SIAMO &#8213 </p>
+                <p>CHI SIAMO &#8213 CHI SIAMO &#8213 </p>
+            </div>
+        </div>
+
+        <!-- body content -->
+        <div class="container">
+            <h3>A PROPOSITO DI EDILSERVIZI</h3>
+            <h1><strong>EDILSERVIZI</strong> - IMPRESA EDILE</h1>
+
+            <div id="about">
+            </div>
+
+            <p>EDILSERVIZI è l'impresa edile di fiducia per tutti i tuoi progetti di ristrutturazione e manutenzione.
+                Specializzati in interventi di piccola manutenzione, offriamo una vasta gamma di servizi per migliorare
+                e preservare gli ambienti domestici e commerciali.<br><br>
+                Dalla modifica delle pareti interne alla
+                ristrutturazione della pavimentazione e al risanamento delle mura, il nostro team esperto è in grado di
+                gestire ogni fase del processo con professionalità e precisione. Siamo consapevoli dell'importanza dei
+                dettagli e ci impegniamo a garantire risultati di alta qualità utilizzando materiali e tecniche
+                all'avanguardia. Indipendentemente dalle dimensioni del progetto, ci adoperiamo per soddisfare le
+                esigenze dei nostri clienti in modo tempestivo e efficiente. Con EDILSERVIZI, puoi contare su un partner
+                affidabile per tutti i tuoi lavori di ristrutturazione e manutenzione, garantendo un ambiente sicuro,
+                funzionale e esteticamente gradevole per te e per la tua famiglia o attività.</p>
+        </div>
+    </main>
+
+    <!-- ----------------- FOOTER ----------------- -->
+    <footer class="footer">
+        <div class="copiright">© Copiright - EDILSERVIZI - P.IVA 04389100241 - Via Schio 52 36034, Malo(VI)</div>
+    </footer>
+
+
+    <!-- ----------------- SCRIPT ----------------- -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector("header");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+
+            /* if scrolling down, let it scroll out of view as normal */
+            if (prevScrollpos <= currentScrollPos) {
+                headerDiv.classList.remove("fixedToTop");
+                headerDiv.style.top = "-27.2rem";
+            }
+            /* otherwise if we're scrolling up, fix the nav to the top */
+            else {
+                headerDiv.classList.add("fixedToTop");
+                headerDiv.style.top = "0";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+
+</html>

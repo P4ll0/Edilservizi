@@ -1,0 +1,42 @@
+/* contenitore generico */
+.main .container {
+    min-height: 100vh;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main .container p {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: light;
+    max-width: 80vw;
+}
+
+
+
+.main #about {
+    background-image: url(../img/about.jpg);
+    border: 2px solid #181818;
+    height: 60vh;
+    width: 70vw;
+    margin-bottom: 1rem;
+    background-size: 220%;
+    background-position: center;
+}
+
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+
+@media (min-width: 48em) {
+    .main .container p {
+        font-size: 1.2rem;
+    }
+
+    .main #about {
+        background-position: 50% 40%;
+    }
+}

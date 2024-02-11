@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdilServizi - contatti</title>
+
+    <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/contatti.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo_img"></a>
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- bottone del menu -->
+        <label for="menu-BTN" class="menu_icon">
+            <span class="nav_icon"></span> <!-- icona del menu -->
+        </label>
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="servizi.html">SERVIZI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="about.html">INFO</a></li>
+        </ul>
+    </header>
+
+    <!-- ----------------- BODY ----------------- -->
+    <main class="main">
+        <div id="container">
+            <div class="stage_animation">
+                <p>DOVE SIAMO &#8213 DOVE SIAMO &#8213 </p>
+                <p>DOVE SIAMO &#8213 DOVE SIAMO &#8213 </p>
+            </div>
+        </div>
+
+        <!-- body content -->
+        <div id="mappa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.962903829368!2d11.402586512238761!3d45.67164501945245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778b4feed465a89%3A0xb31614d63e135431!2sVia%20Schio%2C%2052%2C%2036034%20Malo%20VI!5e0!3m2!1sit!2sit!4v1706725435400!5m2!1sit!2sit"
+                width="80%" height="80%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact_box">
+            <h1 class="title">DOVE TROVARCI</h1>
+            <ul class="contatti">
+                <li class="fa fa-map-marker">Malo, Via Schio 52</li>
+                <li class="fa fa-phone">+39 389 204 4898</li>
+                <li class="fa fa-envelope">edilservizi.m@gmail.com</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ----------------- FOOTER ----------------- -->
+    <footer class="footer">
+        <div class="copiright">© Copiright - EDILSERVIZI - P.IVA 04389100241 - Via Schio 52 36034, Malo(VI)</div>
+    </footer>
+
+
+    <!-- ----------------- SCRIPT ----------------- -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+
+        /* Get the header element and it's position */
+        var headerDiv = document.querySelector("header");
+        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+
+            /* if scrolling down, let it scroll out of view as normal */
+            if (prevScrollpos <= currentScrollPos) {
+                headerDiv.classList.remove("fixedToTop");
+                headerDiv.style.top = "-27.2rem";
+            }
+            /* otherwise if we're scrolling up, fix the nav to the top */
+            else {
+                headerDiv.classList.add("fixedToTop");
+                headerDiv.style.top = "0";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+
+</html>

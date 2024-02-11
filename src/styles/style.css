@@ -1,0 +1,318 @@
+/* importo il font "Roboto" */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* ----------------- GENERICO ----------------- */
+html,
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #181818;
+    color: #eee;
+    animation: pageTransition .5s ease-in-out 1;
+}
+
+a {
+    color: #eee;
+}
+
+
+/* ----------------- SCROLL BAR ----------------- */
+
+/* al posto di html:: si puo mettere un qualsiasi elemento che ha bisogno di una scroll-bar */
+html::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* barra laterale della scrollbar */
+html::-webkit-scrollbar-track {
+    background: #333;
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
+
+/* barretta che si muove nella scrollbar-track */
+html::-webkit-scrollbar-thumb {
+    background: rgb(71, 71, 71);
+    /* background: rgb(126, 6, 6);
+    background: radial-gradient(circle, rgba(83, 9, 9, 1) 60%, rgba(71, 71, 71, 1) 100%); */
+    box-shadow: inset 0 0 5px #333;
+    border-radius: 1em;
+}
+
+
+
+/* --------------------------- x script nel body --------------------------- */
+/* classe che indica se è in cima x script (fare scomparire lheader) */
+.header .fixedToTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* --------------------------- x script nel body --------------------------- */
+
+
+
+/* ----------------- HEADER ----------------- */
+.header {
+    background-color: #212121;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+    position: fixed;
+    width: 100%;
+    max-width: calc(100vw - 4rem);
+    top: 0;
+    z-index: 100;
+    transition: top 0.4s ease-in-out;
+
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    border-radius: 1rem;
+    margin: 1rem 1rem;
+    padding: 0 1rem;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #212121;
+}
+
+.header ul a {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+.header ul a:hover {
+    background-color: #181818;
+}
+
+.header .logo {
+    float: left;
+    font-size: 2em;
+    padding: 10px 0px 10px 15px;
+    text-decoration: none;
+}
+
+.header .logo_img {
+    /* border: solid 2px red; */
+    content: "";
+    display: block;
+    float: left;
+    width: 3.5em;
+    height: 3.5em;
+    background-image: url(../img/Loghi-EDILSERVIZI/Medium/Logo_white.svg);
+    background-position: center;
+    background-size: contain;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu_icon {
+    /* border: 2px solid red; */
+    padding: 2em;
+    position: relative;
+    cursor: pointer;
+}
+
+/* creo l'icona del menu (la label della checkbox) (hamburger icon) */
+.header .menu_icon .nav_icon {
+    background-color: gray;
+    display: block;
+    width: 25px;
+    height: 2.4px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    float: right;
+}
+
+.header .menu_icon .nav_icon:before,
+.header .menu_icon .nav_icon:after {
+    background-color: gray;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s ease-out;
+    position: absolute;
+}
+
+.header .menu_icon .nav_icon:before {
+    top: 5px;
+}
+
+.header .menu_icon .nav_icon:after {
+    top: -5px;
+}
+
+/* nascondo la checkbox */
+.header .menuBTN {
+    display: none;
+}
+
+/* .header .menuBTN:checked {}  ->  lavora sulla checkbox */
+/* lavora sul sibling di .header -> .menu */
+.header .menuBTN:checked~.menu {
+    max-height: 240px;
+}
+
+/* creo la X al posto dell'hamburger menu */
+.header .menuBTN:checked~.menu_icon .nav_icon {
+    background-color: transparent;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/* ----------------- FOOTER ----------------- */
+
+.footer {
+    background-color: #212121;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    color: gray;
+}
+
+.footer .copiright {
+    color: gray;
+    padding: 20px 0;
+    font-size: xx-small;
+    text-align: center;
+    clear: both;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ----------------- BODY (main) ----------------- */
+
+.main {
+    min-height: calc(100vh - 51px);
+    padding-top: 8rem;
+}
+
+/* SCROLL TEXT INFINITO (lo metto sotto all'header nel main di solito) */
+/* container generico (non spaziato dall'header) */
+.main #container {
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+/* container della home (gia spaziato dall'header) */
+.main #home_container {
+    overflow: hidden;
+    margin-bottom: 3rem;
+    /* border-bottom: dotted gray 1px; */
+}
+
+.main .stage_animation {
+    padding: 0;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.main .stage_animation p {
+    margin: 0 1rem;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 10rem;
+    color: #333;
+}
+
+.stage_animation {
+    animation: stage_animation 10s linear infinite;
+}
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+
+@media (min-width: 48em) {
+
+    /* generico */
+    .main {
+        font-size: large;
+    }
+
+    /* header */
+    .header {
+        margin: 2rem 2rem;
+        max-width: calc(100vw - 8rem);
+    }
+
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 20px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: 240px;
+    }
+
+    .header .menu_icon {
+        display: none;
+    }
+
+    /* footer */
+    .footer .copiright {
+        font-size: medium;
+    }
+}
+
+
+/* ----------------- SPECIFICO ----------------- */
+.color_red {
+    color: #BC4A3C;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+
+/* ----------------- ANIMAZIONI ----------------- */
+@keyframes stage_animation {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes pageTransition {
+    from {
+        transform: scale(95%);
+    }
+
+    to {
+        transform: scale(100%);
+    }
+}
