@@ -43,173 +43,12 @@ html::-webkit-scrollbar-thumb {
 
 
 
-/* --------------------------- x script nel body --------------------------- */
-/* classe che indica se è in cima x script (fare scomparire lheader) */
-.header .fixedToTop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-/* --------------------------- x script nel body --------------------------- */
-
-
-
-/* ----------------- HEADER ----------------- */
-.header {
-    background-color: #212121;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
-    position: fixed;
-    width: 100%;
-    max-width: calc(100vw - 4rem);
-    top: 0;
-    z-index: 100;
-    transition: top 0.4s ease-in-out;
-
-
-    display: grid;
-    grid-template-columns: 1fr auto;
-
-    border-radius: 1rem;
-    margin: 1rem 1rem;
-    padding: 0 1rem;
-}
-
-.header ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #212121;
-}
-
-.header ul a {
-    text-decoration: none;
-    display: block;
-    padding: 20px;
-}
-
-.header ul a:hover {
-    background-color: #181818;
-}
-
-.header .logo {
-    float: left;
-    font-size: 2em;
-    padding: 10px 0px 10px 15px;
-    text-decoration: none;
-}
-
-.header .logo_img {
-    /* border: solid 2px red; */
-    content: "";
-    display: block;
-    float: left;
-    width: 3.5em;
-    height: 3.5em;
-    background-image: url(../img/Loghi-EDILSERVIZI/Medium/Logo_white.svg);
-    background-position: center;
-    background-size: contain;
-}
-
-.header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-}
-
-.header .menu_icon {
-    /* border: 2px solid red; */
-    padding: 2em;
-    position: relative;
-    cursor: pointer;
-}
-
-/* creo l'icona del menu (la label della checkbox) (hamburger icon) */
-.header .menu_icon .nav_icon {
-    background-color: gray;
-    display: block;
-    width: 25px;
-    height: 2.4px;
-    position: relative;
-    transition: background-color .2s ease-out;
-    float: right;
-}
-
-.header .menu_icon .nav_icon:before,
-.header .menu_icon .nav_icon:after {
-    background-color: gray;
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    transition: all .2s ease-out;
-    position: absolute;
-}
-
-.header .menu_icon .nav_icon:before {
-    top: 5px;
-}
-
-.header .menu_icon .nav_icon:after {
-    top: -5px;
-}
-
-/* nascondo la checkbox */
-.header .menuBTN {
-    display: none;
-}
-
-/* .header .menuBTN:checked {}  ->  lavora sulla checkbox */
-/* lavora sul sibling di .header -> .menu */
-.header .menuBTN:checked~.menu {
-    max-height: 240px;
-}
-
-/* creo la X al posto dell'hamburger menu */
-.header .menuBTN:checked~.menu_icon .nav_icon {
-    background-color: transparent;
-}
-
-.header .menuBTN:checked~.menu_icon .nav_icon::before {
-    transform: rotate(-45deg);
-    top: 0;
-}
-
-.header .menuBTN:checked~.menu_icon .nav_icon::after {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-
-/* ----------------- FOOTER ----------------- */
-
-.footer {
-    background-color: #212121;
-    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-    color: gray;
-}
-
-.footer .copiright {
-    color: gray;
-    padding: 20px 0;
-    font-size: xx-small;
-    text-align: center;
-    clear: both;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 
 /* ----------------- BODY (main) ----------------- */
 
 .main {
     min-height: calc(100vh - 51px);
-    padding-top: 8rem;
+    padding-top: 4rem;
 }
 
 /* SCROLL TEXT INFINITO (lo metto sotto all'header nel main di solito) */
@@ -248,40 +87,12 @@ html::-webkit-scrollbar-thumb {
 
 /* ----------------- DESKTOP GUI ----------------- */
 
-@media (min-width: 48em) {
+@media (min-width: 1281px) {
 
     /* generico */
     .main {
         font-size: large;
-    }
-
-    /* header */
-    .header {
-        margin: 2rem 2rem;
-        max-width: calc(100vw - 8rem);
-    }
-
-    .header li {
-        float: left;
-    }
-
-    .header li a {
-        padding: 20px 30px;
-    }
-
-    .header .menu {
-        clear: none;
-        float: right;
-        max-height: 240px;
-    }
-
-    .header .menu_icon {
-        display: none;
-    }
-
-    /* footer */
-    .footer .copiright {
-        font-size: medium;
+        padding-top: 0;
     }
 }
 

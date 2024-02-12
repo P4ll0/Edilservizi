@@ -4,35 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content=EDILSERVIZI>
-    <meta property="og:site_name" content=EdilServizi>
-    <meta property="og:url" content=edilservizi.net>
-    <meta property="og:description" content=Lavori di piccola manutenzione.>
-    <meta property="og:type" content=website>
-    <meta property="og:image" content="https://edilservizi.net/src/img/Loghi-EDILSERVIZI/Medium/Logo_full-colored.svg">
-    <meta property="og:image:secure_url" content="https://edilservizi.net/src/img/Loghi-EDILSERVIZI/Medium/Logo_full-colored.svg">
     <title>EdilServizi - servizi</title>
 
     <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
 
     <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="src/styles/servizi.css">
+    <link rel="stylesheet" href="src/styles/navbar.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
 </head>
 
 <body>
-    <!-- ----------------- HEADER ----------------- -->
+    <!-- ------------------------ NAVBAR ------------------------ -->
     <header class="header">
-        <a href="index.html" class="logo_img"></a>
-        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- bottone del menu -->
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- pulsante del menu -->
         <label for="menu-BTN" class="menu_icon">
             <span class="nav_icon"></span> <!-- icona del menu -->
         </label>
-        <ul class="menu">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="servizi.html">SERVIZI</a></li>
-            <li><a href="contatti.html">CONTATTI</a></li>
-            <li><a href="about.html">INFO</a></li>
-        </ul>
+        <a href="index.html" class="logo">EDILSERVIZI</a>
+        <div class="menu_overlay">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="servizi.html" id="current">SERVIZI</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+                <li><a href="about.html">INFO</a></li>
+            </ul>
+        </div>
     </header>
 
 
@@ -115,28 +112,6 @@
 
     <!-- ----------------- SCRIPT ----------------- -->
     <script>
-        var prevScrollpos = window.pageYOffset;
-
-        /* Get the header element and it's position */
-        var headerDiv = document.querySelector("header");
-        var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
-
-        window.onscroll = function () {
-            var currentScrollPos = window.pageYOffset;
-
-            /* if scrolling down, let it scroll out of view as normal */
-            if (prevScrollpos <= currentScrollPos) {
-                headerDiv.classList.remove("fixedToTop");
-                headerDiv.style.top = "-27.2rem";
-            }
-            /* otherwise if we're scrolling up, fix the nav to the top */
-            else {
-                headerDiv.classList.add("fixedToTop");
-                headerDiv.style.top = "0";
-            }
-
-            prevScrollpos = currentScrollPos;
-        }
     </script>
 </body>
 

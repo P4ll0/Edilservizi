@@ -1,0 +1,228 @@
+* {
+    /* tmp */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* -------------------- CONTENITORE NAVBAR -------------------- */
+.header {
+    background-color: #111;
+    color: #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 3.6rem;
+}
+
+
+/* -------------------- NOME AZIENDA -------------------- */
+/* contenitore nome */
+.header .logo {
+    float: left;
+    font-size: 2rem;
+    padding: 0.65rem 0;
+    color: #72362f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* -------------------- HAMBURGER MENU -------------------- */
+/* contenitore menu (label) */
+.header .menu_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    z-index: 102;
+}
+
+/* logo del menu */
+.header .menu_icon .nav_icon {
+    height: 6%;
+    width: 50%;
+    background: #eee;
+    position: absolute;
+    border-radius: 10rem;
+}
+
+.header .menu_icon .nav_icon:before,
+.header .menu_icon .nav_icon:after {
+    background: #eee;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    transition: all .2s ease-out;
+    border-radius: 10rem;
+}
+
+.header .menu_icon .nav_icon:before {
+    top: 250%;
+}
+
+.header .menu_icon .nav_icon::after {
+    bottom: 250%;
+}
+
+
+/* -------------------- MENU -------------------- */
+/* overlay del menu */
+.header .menu_overlay {
+    background: transparent;
+    width: 0;
+    height: 100vh;
+}
+
+/* contenitore del menu (ul) */
+.header .menu {
+    background-color: #111;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    height: 100vh;
+    width: 0;
+    transition: all .2s ease-out;
+    text-align: left;
+
+    position: absolute;
+    z-index: 98;
+    top: 0;
+    padding-top: 3.6rem;
+}
+
+/* links del menu (li) */
+.header .menu a {
+    display: block;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    outline-style: none;
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* link del menu della pagine corrente (es home in index.html) */
+.header .menu #current {
+    background: #72362f;
+}
+
+/* nascondo la checkbox */
+.header .menuBTN {
+    display: none;
+}
+
+
+/* -------------------- SCOMPARSA MENU -------------------- */
+.header .menuBTN:checked~.menu_overlay .menu {
+    width: 70vw;
+    z-index: 100;
+}
+
+.header .menuBTN:checked~.header {
+    background-color: transparent;
+}
+
+.header .menuBTN:checked~.menu_overlay {
+    background: #0000009c;
+    position: absolute;
+    z-index: 99;
+    width: 100vw;
+}
+
+/* creo la X al posto dell'hamburger menu */
+.header .menuBTN:checked~.menu_icon .nav_icon {
+    background-color: transparent;
+    animation: spin .5s ease 0s 1;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::before {
+    rotate: -45deg;
+    top: 0;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::after {
+    rotate: 45deg;
+    top: 0;
+}
+
+
+/* ----------------- SCROLL BAR DEL MENU A TENDINA (in caso di overflow) ----------------- */
+.header::-webkit-scrollbar {
+    width: 0;
+}
+
+/* ----------------- DESKTOP GUI ----------------- */
+@media (min-width: 1281px) {
+    body {
+        width: 87%;
+        position: absolute;
+        right: 0;
+    }
+
+    .header {
+        width: 13%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header .logo {
+        position: absolute;
+        z-index: 102;
+        font-size: calc(1rem + 1vw);
+        padding: 5vh 0;
+    }
+
+    .header .menu_icon {
+        display: none;
+    }
+
+    .header .menu_overlay,
+    .header .menu_overlay .menu {
+        width: 100%;
+    }
+
+    .header .menu_overlay .menu::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 6.5vh;
+    }
+
+    .header .menu_overlay .menu a {
+        font-size: calc(.3rem + 1vw);
+        padding-left: 5%;
+        font-weight: 400;
+    }
+
+    .header .menu_overlay .menu a:hover {
+        background: #333;
+    }
+}
+
+
+
+/* ----------------- ANIMAZIONI ----------------- */
+/* spin */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
