@@ -12,89 +12,49 @@
 }
 
 /* ----------------- 1° PARTE (display servizi disponibili) ----------------- */
-/* contenitore di tutti i servizi */
-.main .servizi {
-    background-color: #BC4A3C;
-    min-height: 100vh;
+
+.main .card_container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.main .card {
+    overflow: hidden;
+    width: 50vw;
+    min-height: 35vh;
+    position: relative;
+}
+
+.main .card figure {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-top: 3px solid #eee;
-}
-
-/* contenitore servizi singoli - immagine di sfondo */
-.main .servizi #bg_img_1,
-.main .servizi #bg_img_2,
-.main .servizi #bg_img_3 {
-    background-size: cover;
-    flex: 1;
-    border: 2px solid #181818;
-}
-
-.main .servizi #bg_img_1 {
-    background-image: url(../img/servizi/risanamento_mura.jpg);
-}
-
-.main .servizi #bg_img_2 {
-    background-image: url(../img/servizi/modifica_pareti_interne.jpg);
-    background-position: 50%;
-}
-
-.main .servizi #bg_img_3 {
-    background-image: url(../img/servizi/ristrutturazione_pavimentazione.jpg);
-    background-position: 50%;
-}
-
-/* contenitore servizi singoli - con overlay */
-.main .servizi .box {
-    background-color: #bc4b3c6e;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    text-shadow: 3px 2px 3px #212121;
-}
-
-/* servizi singoli - titolo */
-.main .servizi .box h1 {
-    font-size: 1.3rem;
-    text-align: center;
-    min-height: 50px;
-}
-
-/* servizi singoli - descrizione */
-.main .servizi .box p {
-    padding: 0 10px;
-    font-weight: bold;
-    text-align: center;
-    min-height: 33.5vh;
-    display: flex;
     align-items: center;
 }
 
-/* servizi singoli - pulsante */
-.main .servizi .box button {
-    width: 6rem;
-    height: 2rem;
-    margin: 10px;
-    color: #212121;
-    font-weight: 800;
-    background: transparent;
-    border: solid 2px #181818;
-    box-shadow: 1px 1px 8px #181818;
+.main .card img {
+    width: 40vw;
+    height: 40vw;
+    border-bottom: solid .5rem #72362f;
+    object-fit: cover;
 }
 
-.main .servizi .box button:hover {
-    color: #eee;
-    background: #212121;
+.main .card figcaption::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    top: 0;
+    background-color: #00000048;
 }
 
-.main .servizi .box button:active {
-    color: #eee;
-    background: #333;
+.main .card figcaption {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    padding: 0 5vw;
 }
+
 
 
 
@@ -108,18 +68,27 @@
     }
 
     /* ----------------- 1° PARTE (display servizi disponibili) ----------------- */
-    /* contenitore di tutti i servizi */
-    .main .servizi {
-        flex-direction: row;
+
+    .main .card {
+        width: 40vw;
+        min-height: 50vh;
+        padding-bottom: 3rem;
     }
 
-    /* servizi singoli - pulsante */
-    .main .servizi .box button {
-        width: 12rem;
-        height: 3rem;
+    .main .card figcaption {
+        font-size: 2.3rem;
+        font-weight: 500;
+        padding: 0 2.5vw;
     }
 
-    .main .servizi .box h1{
-        font-size: 2rem;
+    .main .card figcaption::before {
+        width: 35vw;
+        height: 35vw;
+        left: 2.5vw;
+    }
+
+    .main .card img {
+        width: 35vw;
+        height: 35vw;
     }
 }

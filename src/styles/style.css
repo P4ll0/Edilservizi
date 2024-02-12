@@ -11,7 +11,6 @@ body {
     font-style: normal;
     background-color: #181818;
     color: #eee;
-    animation: pageTransition .5s ease-in-out 1;
 }
 
 a {
@@ -99,7 +98,7 @@ html::-webkit-scrollbar-thumb {
 
 /* ----------------- SPECIFICO ----------------- */
 .color_red {
-    color: #BC4A3C;
+    color: #85382f;
 }
 
 .bold {
@@ -115,15 +114,5 @@ html::-webkit-scrollbar-thumb {
 
     100% {
         transform: translate3d(-50%, 0, 0);
-    }
-}
-
-@keyframes pageTransition {
-    from {
-        transform: scale(95%);
-    }
-
-    to {
-        transform: scale(100%);
     }
 }
