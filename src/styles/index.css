@@ -117,7 +117,6 @@
 /* immagini */
 .main .servizi_wrapper #service1,
 .main .servizi_wrapper #service2 {
-    background: var(--special-color);
     width: calc(100% - 20px);
     height: 80%;
     margin: 0 10px;
@@ -175,7 +174,7 @@
 .main .servizi_container .more button:hover,
 .main .servizi_container .active,
 .main .servizi_container .accordion:hover {
-    background-color: var(--default-button-hover-bg);
+    background-color: var(--special-color);
 }
 
 .main .servizi_container .accordion:after {
