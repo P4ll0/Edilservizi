@@ -75,7 +75,7 @@ main .fa::before {
 
 /* ----------------- DESKTOP GUI ----------------- */
 
-@media (min-width: 48em) {
+@media (min-width: 1281px) {
 
     /* sezione 1 */
     .main #mappa {

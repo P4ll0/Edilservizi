@@ -1,8 +1,8 @@
 /* -------------------- CONTENITORE FOOTER -------------------- */
 .footer {
     position: relative;
-    background-color: #111;
-    color: #eee;
+    background-color: var(--bg-headfoot-color);
+    color: var(--text-default-color);
     width: 100%;
     bottom: 0;
     z-index: 99;
@@ -22,7 +22,7 @@
 .footer .logo {
     text-align: center;
     padding: 3vh 0;
-    color: #72362f;
+    color: var(--special-color);
     font-weight: bold;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .footer .copiright a:hover {
-    color: #72362f;
+    color: var(--special-color);
 }
 
 .footer .copiright a:focus {
@@ -75,7 +75,7 @@
 
 
 /* ----------------- DESKTOP GUI ----------------- */
-@media (min-width: 48em) {
+@media (min-width: 1281px) {
 
     /* linea che separa il nome dell'azienda dal resto */
     .footer hr {
@@ -124,13 +124,13 @@ html::-webkit-scrollbar {
 
 /* barra laterale della scrollbar */
 html::-webkit-scrollbar-track {
-    background: #333;
+    background: var(--scrollbar-track-color);
     box-shadow: inset 0 0 5px rgb(0, 0, 0);
 }
 
 /* barretta che si muove nella scrollbar-track */
 html::-webkit-scrollbar-thumb {
-    background: #72362f;
+    background: var(--special-color);
     box-shadow: inset 0 0 5px #111;
     border-radius: 1em;
 }

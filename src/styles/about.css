@@ -1,42 +1,32 @@
-/* contenitore generico */
-.main .container {
-    min-height: 100vh;
-    padding: 10px;
-    text-align: center;
+.main .card {
+    width: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
-.main .container p {
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: light;
-    max-width: 80vw;
-}
-
-
-
-.main #about {
-    background-image: url(../img/about.jpg);
-    border: 2px solid #181818;
-    height: 60vh;
-    width: 70vw;
-    margin-bottom: 1rem;
-    background-size: 220%;
-    background-position: center;
+.main .card img {
+    width: 100%;
+    height: 100vw;
+    object-fit: cover;
 }
 
 
 
 /* ----------------- DESKTOP GUI ----------------- */
 
-@media (min-width: 48em) {
-    .main .container p {
-        font-size: 1.2rem;
+@media (min-width: 1281px) {
+    .main .card {
+        flex-direction: row;
     }
 
-    .main #about {
-        background-position: 50% 40%;
+    .main .card img {
+        width: 30vw;
+        height: 25vw;
+        object-fit: cover;
+        margin: 1rem 3rem;
+    }
+
+    .main .card .description {
+        margin: 1rem;
     }
 }

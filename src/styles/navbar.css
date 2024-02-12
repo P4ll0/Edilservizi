@@ -8,8 +8,8 @@
 
 /* -------------------- CONTENITORE NAVBAR -------------------- */
 .header {
-    background-color: #111;
-    color: #eee;
+    background-color: var(--bg-headfoot-color);
+    color: var(--text-default-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,7 +25,7 @@
     float: left;
     font-size: 2rem;
     height: 100%;
-    color: #72362f;
+    color: var(--special-color);
     text-decoration: none;
     font-weight: bold;
     display: flex;
@@ -62,14 +62,14 @@
 .header .menu_icon .nav_icon {
     height: 6%;
     width: 50%;
-    background: #eee;
+    background: var(--text-default-color);
     position: absolute;
     border-radius: 10rem;
 }
 
 .header .menu_icon .nav_icon:before,
 .header .menu_icon .nav_icon:after {
-    background: #eee;
+    background: var(--text-default-color);
     display: block;
     position: absolute;
     height: 100%;
@@ -98,7 +98,7 @@
 
 /* contenitore del menu (ul) */
 .header .menu {
-    background-color: #111;
+    background-color: var(--bg-headfoot-color);
     clear: both;
     margin: 0;
     padding: 0;
@@ -122,14 +122,14 @@
     padding: 1rem 0.5rem;
     outline-style: none;
     text-decoration: none;
-    color: #eee;
+    color: var(--text-default-color);
     font-weight: bold;
     font-size: 1.5rem;
 }
 
 /* link del menu della pagine corrente (es home in index.html) */
 .header .menu #current {
-    background: #72362f;
+    background: var(--special-color);
 }
 
 /* nascondo la checkbox */
@@ -176,6 +176,48 @@
 .header::-webkit-scrollbar {
     width: 0;
 }
+
+
+
+
+/* ----------------- THEME SWITCHER ----------------- */
+.theme_switcher {
+    z-index: inherit;
+    height: 36px;
+    background-color: var(--switch-bg);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: .13rem .40rem;
+    position: fixed;
+    width: 5rem;
+    bottom: 10px;
+    right: 10px;
+}
+
+.theme_switcher svg {
+    z-index: 102;
+    padding: .66rem;
+}
+
+.theme_switcher::after {
+    content: "";
+    position: absolute;
+    width: 2.22rem;
+    height: 2.22rem;
+    background-color: var(--switch-circle-bg);
+    border-radius: 50px;
+    z-index: 101;
+    left: var(--left-value);
+    right: var(--right-value);
+}
+
+
+
+
 
 /* ----------------- DESKTOP GUI ----------------- */
 @media (min-width: 1281px) {
@@ -234,7 +276,13 @@
     }
 
     .header .menu_overlay .menu a:hover {
-        background: #333;
+        background: var(--default-overlay);
+    }
+
+    /* ----------------- THEME SWITCHER ----------------- */
+    .theme_switcher {
+        top: 10px;
+        bottom: auto;
     }
 }
 

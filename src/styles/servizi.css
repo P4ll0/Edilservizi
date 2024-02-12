@@ -34,7 +34,7 @@
 .main .card img {
     width: 40vw;
     height: 40vw;
-    border-bottom: solid .5rem #72362f;
+    border-bottom: solid .5rem var(--special-color);
     object-fit: cover;
 }
 
@@ -60,7 +60,7 @@
 
 /* ----------------- DESKTOP GUI ----------------- */
 
-@media (min-width: 48em) {
+@media (min-width: 1281px) {
 
     /* intro ai servizi */
     .main #intro {
