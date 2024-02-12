@@ -24,10 +24,23 @@
 .header .logo {
     float: left;
     font-size: 2rem;
-    padding: 0.65rem 0;
+    height: 100%;
     color: #72362f;
     text-decoration: none;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo::before {
+    content: "";
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 10px;
+    background-image: url(../img/Loghi-EDILSERVIZI/Medium/Logo_bordeaux.png);
+    background-position: 0 0;
+    background-size: contain;
 }
 
 
@@ -183,7 +196,15 @@
         position: absolute;
         z-index: 102;
         font-size: calc(1rem + 1vw);
-        padding: 5vh 0;
+        padding: 2vh 0;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header .logo::before {
+        display: inline-block;
+        height: 6rem;
+        width: 6rem;
     }
 
     .header .menu_icon {
@@ -193,6 +214,10 @@
     .header .menu_overlay,
     .header .menu_overlay .menu {
         width: 100%;
+    }
+
+    .header .menu_overlay .menu {
+        padding-top: 8rem;
     }
 
     .header .menu_overlay .menu::before {
