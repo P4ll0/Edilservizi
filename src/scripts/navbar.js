@@ -57,6 +57,3 @@ const switchTeme = () => {
 };
 
 document.querySelector(".theme_switcher").addEventListener("click", switchTeme);
-
-// //SCROLL ROBA
-// document.addEventListener("start", switchTeme);

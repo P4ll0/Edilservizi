@@ -23,8 +23,7 @@
     --switch-circle-bg: #ffd271;
     --icon-sun: #997f44;
     --icon-moon: #b1b0b5;
-    --right-value: "auto";
-    --left-value: .5rem;
+    --left-value: .28rem;
 }
 
 :root[data-theme="dark"] {
@@ -47,8 +46,7 @@
     --switch-circle-bg: #333333;
     --icon-sun: #b1b0b5;
     --icon-moon: #4c4469;
-    --right-value: .5rem;
-    --left-value: "auto";
+    --left-value: 2.853rem;
 }
 
 

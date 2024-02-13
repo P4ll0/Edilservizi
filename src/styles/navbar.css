@@ -191,9 +191,9 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    padding: .13rem .40rem;
+    padding: .13rem .13rem;
     position: fixed;
-    width: 5rem;
+    width: 5.1rem;
     bottom: 10px;
     right: 10px;
     border: solid 1px #111;
@@ -212,8 +212,9 @@
     background-color: var(--switch-circle-bg);
     border-radius: 50px;
     z-index: 101;
-    left: var(--left-value);
-    right: var(--right-value);
+    left: 0;
+    transform: translateX(var(--left-value));
+    transition: .25s ease-in-out;
 }
 
 
