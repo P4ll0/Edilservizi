@@ -29,16 +29,18 @@ checkMenu.addEventListener("click", () => {
 
 // FA SPARIRE IL MENU QUANDO PREMO SULL'OVERLAY
 menuOverlay.addEventListener("click", () => {
-    isChecked = !isChecked;
-    checkMenu.checked = isChecked;
-
     if (isChecked) {
-        navbar.style.backgroundColor = "transparent";
-        scritta.style.display = "none";
-    }
-    else {
-        navbar.style.backgroundColor = prevColor;
-        scritta.style.display = displayScritta;
+        isChecked = !isChecked;
+        checkMenu.checked = isChecked;
+
+        if (isChecked) {
+            navbar.style.backgroundColor = "transparent";
+            scritta.style.display = "none";
+        }
+        else {
+            navbar.style.backgroundColor = prevColor;
+            scritta.style.display = displayScritta;
+        }
     }
 });
 
