@@ -53,6 +53,13 @@
 
 
 /* ----------------- GENERICO ----------------- */
+* > * {
+    transition-property: color, background-color, border-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
 html,
 body {
     margin: 0;
@@ -64,6 +71,7 @@ body {
     max-width: 100vw;
 }
 
+/* evidenziazione */
 *::selection {
     background: #532e29cc;
     color: var(--text-default-color);
@@ -74,6 +82,7 @@ body {
     color: var(--text-default-color);
 }
 
+/* links generici */
 a {
     color: var(--text-default-color);
 }
