@@ -12,6 +12,7 @@
     --bg-darker-color: #ffffff;
     --special-color: #994f47;
     --default-overlay: #9191919c;
+    --link-overlay: #000000;
     --default-button-bg: #b1b1b1;
     --default-button-hover-bg: #aa6058;
     --default-button-p-bg: #c9c8c8;
@@ -36,6 +37,7 @@
     --bg-darker-color: #080808;
     --special-color: #72362f;
     --default-overlay: #333;
+    --link-overlay: #ffffff;
     --default-button-bg: #222;
     --default-button-p-bg: #333;
     --stage-anim-color: #333;

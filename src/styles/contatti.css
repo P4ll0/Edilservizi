@@ -42,7 +42,7 @@
 }
 
 .main .contatti li a:hover {
-    filter: drop-shadow(0 0 1em #fff);
+    filter: drop-shadow(0 0 1rem var(--link-overlay));
 }
 
 
