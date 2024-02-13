@@ -23,7 +23,7 @@
 .main .big_title {
     color: var(--text-default-color);
     font-size: 3rem;
-    text-shadow: #000 0 0 10px;
+    text-shadow: var(--main-title-shadow) 0 0 10px;
 }
 
 /* palle sullo sfondo */
