@@ -79,17 +79,14 @@
 /* y */
 .main .title_bg .y1 {
     bottom: 0;
-    animation: fallingY1 1s linear 0s 1 alternate both;
 }
 
 .main .title_bg .y2 {
     bottom: 35vh;
-    animation: fallingY2 1s linear 0s 1 alternate both;
 }
 
 .main .title_bg .y3 {
     bottom: 70vh;
-    animation: fallingY3 1s linear 0s 1 alternate both;
 }
 
 
@@ -356,6 +353,19 @@
 
     .main .title_bg .x4b {
         left: 75vw;
+    }
+
+    /* y */
+    .main .title_bg .y1 {
+        animation: fallingY1 1s linear 0s 1 alternate both;
+    }
+
+    .main .title_bg .y2 {
+        animation: fallingY2 1s linear 0s 1 alternate both;
+    }
+
+    .main .title_bg .y3 {
+        animation: fallingY3 1s linear 0s 1 alternate both;
     }
 
     /* -------------- SEZIONE 1 -------------- */
