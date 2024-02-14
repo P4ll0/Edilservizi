@@ -54,7 +54,7 @@
 
 /* ----------------- GENERICO ----------------- */
 * > * {
-    transition-property: color, background-color, border-color;
+    transition-property: background-color;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
