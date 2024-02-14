@@ -16,11 +16,14 @@
 
 .main .card .description {
     margin: 0;
+    font-weight: 400;
 }
 
 .main .card .title {
     text-align: center;
+    font-weight: 900;
     padding: 1rem 0;
+    text-shadow:  var(--main-title-shadow) 0 0 7px;
 }
 
 

@@ -10,12 +10,14 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MM9E43FRGE"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-MM9E43FRGE');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MM9E43FRGE');
     </script>
+
+    <!-- THEME LOCAL FILE CHECK -->
     <script>
         //check local storage
         let localS = localStorage.getItem("theme"),
@@ -28,7 +30,7 @@
         document.documentElement.setAttribute("data-theme", themeToSet);
     </script>
 
-    <link rel="shortcut icon" href="src/img/Loghi-EDILSERVIZI/Tiny/Tiny_logo_black.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="src/styles/style.css">
@@ -114,7 +116,7 @@
 
         <!-- body content -->
         <div id="mappa">
-            <iframe
+            <iframe title="map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37508.688078552994!2d11.393541158656216!3d45.67391308944273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778b4feed465a89%3A0xb31614d63e135431!2sVia%20Schio%2C%2052%2C%2036034%20Malo%20VI!5e0!3m2!1sit!2sit!4v1707745678260!5m2!1sit!2sit"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
