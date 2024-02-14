@@ -31,26 +31,6 @@
         document.documentElement.setAttribute("data-theme", themeToSet);
     </script>
 
-    <!-- FETCH SHOWOFF IMGS IN MANIERA ASINCRONA -->
-    <script>
-        async function myFetch(url, id) {
-            // aspetto la risposta di fetch()
-            let response = await fetch(url);
-            // aspetto la risposta di blob()
-            let myBlob = await response.blob();
-
-            // il resto viene eseguito solo quando ho avuto le risposte
-
-            let objectURL = URL.createObjectURL(myBlob); //url per <img src="objectURL">
-            let image = document.getElementById(id);  //come fare <img src=""> nel body
-            image.src = objectURL;  //passo da <img src=""> a <img src="objectURL">
-        }
-
-
-        myFetch("src/img/showoff1.webp", "service1").catch(e => { console.log("Error: " + e.message); });
-        myFetch("src/img/showoff2.webp", "service2").catch(e => { console.log("Error: " + e.message); });
-    </script>
-
 
     <link rel="shortcut icon" href="src/img/icon.webp" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -150,7 +130,7 @@
             <!-- titolo -->
             <h1 class="title">I NOSTRI SERVIZI PIU' FAMOSI</h1>
             <!-- immagine 1 -->
-            <img src="" alt="" id="service1">
+            <img src="src/img/showoff1.webp" alt="" id="service1">
             <!-- accordion -->
             <div class="servizi_container">
 
@@ -187,7 +167,7 @@
                 <a href="servizi.html" class="more"><button>SCOPRI</button></a>
             </div>
             <!-- immagine 2 -->
-            <img src="" alt="" id="service2">
+            <img src="src/img/showoff2.webp" alt="" id="service2">
         </div>
 
 
