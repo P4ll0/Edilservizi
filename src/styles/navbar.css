@@ -130,6 +130,8 @@
 /* link del menu della pagine corrente (es home in index.html) */
 .header .menu #current {
     background: var(--special-color);
+    position: relative;
+    text-shadow: var(--main-title-shadow) 0 0 2px;
 }
 
 /* nascondo la checkbox */
