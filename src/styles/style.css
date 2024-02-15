@@ -2,6 +2,36 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 
+
+/* ----------------- FONTS ----------------- */
+/* fa */
+main .fa {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 1rem;
+}
+
+main .fa::before {
+    color: #BC4A3C;
+    margin-right: 10px;
+}
+
+.main .fa-map-marker:before {
+    content: "\f041";
+}
+
+.main .fa-phone:before {
+    content: "\f095";
+}
+
+.main .fa-envelope:before {
+    content: "\f0e0";
+}
+
+
+
 :root[data-theme="light"] {
 
     --bg-headfoot-color: #ffffff;
@@ -73,12 +103,12 @@ body {
 
 /* evidenziazione */
 *::selection {
-    background: #532e29cc;
+    background: #a55348cc;
     color: var(--text-default-color);
 }
 
 *::-moz-selection {
-    background: #532e29cc;
+    background: #a55348cc;
     color: var(--text-default-color);
 }
 

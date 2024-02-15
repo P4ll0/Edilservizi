@@ -470,32 +470,3 @@
         bottom: calc(70vh - 20px);
     }
 }
-
-
-
-/* ----------------- FONTS ----------------- */
-/* fa */
-.main .fa {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    font-size: 1rem;
-}
-
-.main .fa::before {
-    color: var(--special-color);
-    margin-right: 10px;
-}
-
-.main .fa-map-marker:before {
-    content: "\f041";
-}
-
-.main .fa-phone:before {
-    content: "\f095";
-}
-
-.main .fa-envelope:before {
-    content: "\f0e0";
-}
