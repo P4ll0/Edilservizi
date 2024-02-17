@@ -2,12 +2,14 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    align-items: center;
 }
 
 .main .card img {
     width: 100%;
     height: 100vw;
     object-fit: cover;
+    box-shadow:  var(--main-title-shadow) 0 0 10px;
 }
 
 .main .card figcaption {

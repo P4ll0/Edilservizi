@@ -17,6 +17,7 @@
     position: relative;
     z-index: 0;
     overflow: hidden;
+    margin-bottom: 10vh;
 }
 
 /* scritta */
@@ -26,7 +27,7 @@
     text-shadow: var(--main-title-shadow) 0 0 7px;
 }
 
-/* palle sullo sfondo */
+/* bricks sullo sfondo */
 .main .title_bg .final_brick,
 .main .title_bg .brick {
     background-color: #BC4A3C;
@@ -133,8 +134,7 @@
 /* accordion */
 .main .servizi_container {
     width: 100%;
-    padding: 5rem 0;
-    padding-bottom: 8rem;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
