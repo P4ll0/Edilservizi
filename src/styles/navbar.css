@@ -1,305 +1,202 @@
-* {
-    /* tmp */
-    margin: 0;
-    padding: 0;
-}
+/* parte mia (quella in fondo allo schermo) */
 
-
-
-/* -------------------- CONTENITORE NAVBAR -------------------- */
-.header {
-    background-color: var(--bg-headfoot-color);
-    color: var(--text-default-color);
+.navbar .barra {
     position: fixed;
+    bottom: 0;
+    height: 44px;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    height: 3.6rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    z-index: calc(var(--nav-z-index) - 1);
+    padding: 15px 0;
 }
 
-
-/* -------------------- NOME AZIENDA -------------------- */
-/* contenitore nome */
-.header .logo {
-    float: left;
-    font-size: 2rem;
-    height: 100%;
-    color: var(--special-color);
+.navbar .barra a {
+    color: inherit;
     text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+    padding: 0 5px;
+    min-width: 25vw;
+    text-align: center;
 }
 
-.header .logo::before {
-    content: "";
-    display: inline-block;
-    height: 4rem;
-    width: 4rem;
-    margin-right: 10px;
-    background-image: url(../img/Loghi-EDILSERVIZI/Medium/Logo_bordeaux.webp);
-    background-position: 0 0;
-    background-size: contain;
+.navbar .barra a:hover {
+    color: var(--text-hover-color);
+}
+
+.navbar .barra .logo {
+    height: 44px;
+    object-fit: contain;
+    width: 30vw;
 }
 
 
-/* -------------------- HAMBURGER MENU -------------------- */
-/* contenitore menu (label) */
-.header .menu_icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    float: left;
-    position: relative;
+/* parte copiata */
+
+.navbar .wrapper {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background: var(--nav-bg-color);
+    transition: all 0.4s ease-in-out;
+    z-index: var(--nav-z-index);
+}
+
+.navbar #active:checked~.wrapper {
+    right: 0;
+}
+
+.navbar .menu-btn {
+    position: fixed;
+    right: 7px;
+    top: 7px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
     cursor: pointer;
-    z-index: 102;
+    transition: all 0.3s ease-in-out;
+    z-index: calc(var(--nav-z-index) + 1);
+    /* background: #eeeeeed2; */
 }
 
-/* logo del menu */
-.header .menu_icon .nav_icon {
-    height: 6%;
-    width: 50%;
-    background: var(--text-default-color);
-    position: absolute;
-    border-radius: 10rem;
-}
-
-.header .menu_icon .nav_icon:before,
-.header .menu_icon .nav_icon:after {
-    background: var(--text-default-color);
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.navbar .menu-btn span,
+.navbar .menu-btn:before,
+.navbar .menu-btn:after {
     content: "";
-    transition: all .2s ease-out;
-    border-radius: 10rem;
-}
-
-.header .menu_icon .nav_icon:before {
-    top: 250%;
-}
-
-.header .menu_icon .nav_icon::after {
-    bottom: 250%;
-}
-
-
-/* -------------------- MENU -------------------- */
-/* overlay del menu */
-.header .menu_overlay {
-    background: transparent;
-    width: 0;
-    height: 100vh;
-}
-
-/* contenitore del menu (ul) */
-.header .menu {
-    background-color: var(--bg-headfoot-color);
-    clear: both;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    overflow: hidden;
-    height: 100vh;
-    width: 0;
-    transition: all .2s ease-out;
-    text-align: left;
-
     position: absolute;
-    z-index: 98;
-    top: 0;
-    padding-top: 3.6rem;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    height: 3px;
+    background: var(--nav-bg-color);
+    border: solid 1.5px var(--nav-text-color);
+    transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-/* links del menu (li) */
-.header .menu a {
-    display: block;
+.navbar .menu-btn:before {
+    transform: translateY(-8px);
+}
+
+.navbar .menu-btn:after {
+    transform: translateY(8px);
+}
+
+
+.navbar .close {
+    z-index: 1;
     width: 100%;
-    padding: 1rem 0.5rem;
-    outline-style: none;
+    height: 100%;
+    pointer-events: none;
+    transition: background .4s;
+}
+
+/* closing animation */
+.navbar #active:checked+.menu-btn span {
+    transform: scaleX(0);
+}
+
+.navbar #active:checked+.menu-btn:before {
+    transform: rotate(45deg);
+    border-color: var(--nav-text-color);
+}
+
+.navbar #active:checked+.menu-btn {
+    background: transparent;
+}
+
+.navbar #active:checked+.menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: var(--nav-text-color);
+}
+
+.navbar .wrapper ul {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+}
+
+.navbar .wrapper ul li {
+    height: 10%;
+    margin: 15px 0;
+}
+
+.navbar .wrapper ul li a {
     text-decoration: none;
-    color: var(--text-default-color);
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 30px;
+    color: var(--nav-text-color);
+    border-radius: 50px;
+    position: absolute;
+    line-height: 50px;
+    margin: 5px 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition: transform .4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.navbar .wrapper ul li a:after {
+    position: absolute;
+    content: "";
+    background: var(--nav-text-color);
+    width: 100%;
+    height: 7px;
+    left: 0;
+    bottom: 0;
+    border-radius: 50px;
+    transform: scaleX(0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.navbar .wrapper ul li a:hover:after {
+    transform: scaleY(1);
+}
+
+.navbar .wrapper ul li a:hover {
+    color: var(--nav-text-color);
     font-weight: bold;
-    font-size: 1.5rem;
 }
 
-/* link del menu della pagine corrente (es home in index.html) */
-.header .menu #current {
-    background: var(--special-color);
-    position: relative;
-    text-shadow: var(--main-title-shadow) 0 0 2px;
-}
-
-/* nascondo la checkbox */
-.header .menuBTN {
+.navbar input[type="checkbox"] {
     display: none;
 }
 
-
-/* -------------------- SCOMPARSA MENU -------------------- */
-.header .menuBTN:checked~.menu_overlay .menu {
-    width: 70vw;
-    z-index: 100;
+.navbar #active:checked~.wrapper ul li a {
+    opacity: 1;
 }
 
-.header .menuBTN:checked~.header {
-    background-color: transparent;
+.navbar .wrapper ul li a {
+    transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateX(100px);
 }
 
-.header .menuBTN:checked~.menu_overlay {
-    background: #0000009c;
-    position: absolute;
-    z-index: 99;
-    width: 100vw;
+.navbar #active:checked~.wrapper ul li a {
+    transform: none;
+    transition-timing-function: ease, cubic-bezier(.1, 1.3, .3, 1);
+    transition-delay: .3s;
+    transform: translateX(-100px);
 }
-
-/* creo la X al posto dell'hamburger menu */
-.header .menuBTN:checked~.menu_icon .nav_icon {
-    background-color: transparent;
-    animation: spin .5s ease 0s 1;
-}
-
-.header .menuBTN:checked~.menu_icon .nav_icon::before {
-    rotate: -45deg;
-    top: 0;
-}
-
-.header .menuBTN:checked~.menu_icon .nav_icon::after {
-    rotate: 45deg;
-    top: 0;
-}
-
-
-/* ----------------- SCROLL BAR DEL MENU A TENDINA (in caso di overflow) ----------------- */
-.header::-webkit-scrollbar {
-    width: 0;
-}
-
-
-
-
-/* ----------------- THEME SWITCHER ----------------- */
-.theme_switcher {
-    z-index: 200;
-    height: 36px;
-    background-color: var(--switch-bg);
-    border-radius: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: .13rem .13rem;
-    position: fixed;
-    width: 5.1rem;
-    bottom: 10px;
-    right: 10px;
-    border: solid 1px #111;
-}
-
-.theme_switcher svg {
-    z-index: 102;
-    padding: .66rem;
-}
-
-.theme_switcher::after {
-    content: "";
-    position: absolute;
-    width: 2.22rem;
-    height: 2.22rem;
-    background-color: var(--switch-circle-bg);
-    border-radius: 50px;
-    z-index: 101;
-    left: 0;
-    transform: translateX(var(--left-value));
-    transition: .25s ease-in-out;
-}
-
 
 
 
 
 /* ----------------- DESKTOP GUI ----------------- */
 @media (min-width: 1281px) {
-    body {
-        width: 87%;
-        position: absolute;
-        right: 0;
-    }
-
-    .header {
-        width: 13%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-    }
-
-    .header .logo {
-        position: absolute;
-        z-index: 102;
-        font-size: calc(1rem + 1vw);
-        padding: 2vh 0;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .header .logo::before {
-        display: inline-block;
-        height: 6rem;
-        width: 6rem;
-    }
-
-    .header .menu_icon {
-        display: none;
-    }
-
-    .header .menu_overlay,
-    .header .menu_overlay .menu {
-        width: 100%;
-    }
-
-    .header .menu_overlay .menu {
-        padding-top: 8rem;
-    }
-
-    .header .menu_overlay .menu::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 6.5vh;
-    }
-
-    .header .menu_overlay .menu a {
-        font-size: calc(.3rem + 1vw);
-        padding-left: 5%;
-        font-weight: 400;
-    }
-
-    .header .menu_overlay .menu a:hover {
-        background: var(--default-overlay);
-    }
-
-    /* ----------------- THEME SWITCHER ----------------- */
-    .theme_switcher {
-        top: 10px;
-        bottom: auto;
-    }
-}
-
-
-
-/* ----------------- ANIMAZIONI ----------------- */
-/* spin */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(180deg);
+    .navbar .barra {
+        height: 54px;
     }
 }
