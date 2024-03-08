@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EDILSERVIZI - Lavori di piccola manutenzione.">
+    <title>EdilServizi</title>
+
+
+    <!-- Google tag (gtag.js) -->
+    <!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-MM9E43FRGE"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MM9E43FRGE');
+    </script>
+
+    <!-- THEME LOCAL FILE CHECK -->
+    <script>
+        //check local storage
+        let localS = localStorage.getItem("theme"),
+            themeToSet = localS;
+
+        if (!localS && window.matchMedia) {
+            themeToSet = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+        }
+
+        document.documentElement.setAttribute("data-theme", themeToSet);
+    </script>
+
+
+    <link rel="shortcut icon" href="src/img/icon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/navbar.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
+</head>
+
+<body>
+    <!-- ------------------------ NAVBAR ------------------------ -->
+    <header class="header">
+        <input class="menuBTN" id="menu-BTN" type="checkbox"> <!-- pulsante del menu -->
+        <label for="menu-BTN" class="menu_icon">
+            <span class="nav_icon"></span> <!-- icona del menu -->
+        </label>
+        <a href="index.html" class="logo">EDILSERVIZI</a>
+        <div class="menu_overlay">
+            <ul class="menu">
+                <li><a href="index.html" id="current">HOME</a></li>
+                <li><a href="servizi.html">SERVIZI</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+                <li><a href="about.html">INFO</a></li>
+            </ul>
+        </div>
+
+        <!-- ------------------------ THEME SWITCHER ------------------------ -->
+        <div class="theme_switcher">
+            <svg id="icon_sun" fill="var(--icon-sun)" height="24px" width="24px" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink"
+                enable-background="new 0 0 512 512">
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <path
+                                d="m256,105.5c-83.9,0-152.2,68.3-152.2,152.2 0,83.9 68.3,152.2 152.2,152.2 83.9,0 152.2-68.3 152.2-152.2 0-84-68.3-152.2-152.2-152.2zm0,263.5c-61.4,0-111.4-50-111.4-111.4 0-61.4 50-111.4 111.4-111.4 61.4,0 111.4,50 111.4,111.4 0,61.4-50,111.4-111.4,111.4z" />
+                            <path
+                                d="m256,74.8c11.3,0 20.4-9.1 20.4-20.4v-23c0-11.3-9.1-20.4-20.4-20.4-11.3,0-20.4,9.1-20.4,20.4v23c2.84217e-14,11.3 9.1,20.4 20.4,20.4z" />
+                            <path
+                                d="m256,437.2c-11.3,0-20.4,9.1-20.4,20.4v22.9c0,11.3 9.1,20.4 20.4,20.4 11.3,0 20.4-9.1 20.4-20.4v-22.9c0-11.2-9.1-20.4-20.4-20.4z" />
+                            <path
+                                d="m480.6,235.6h-23c-11.3,0-20.4,9.1-20.4,20.4 0,11.3 9.1,20.4 20.4,20.4h23c11.3,0 20.4-9.1 20.4-20.4 0-11.3-9.1-20.4-20.4-20.4z" />
+                            <path
+                                d="m54.4,235.6h-23c-11.3,0-20.4,9.1-20.4,20.4 0,11.3 9.1,20.4 20.4,20.4h22.9c11.3,0 20.4-9.1 20.4-20.4 0.1-11.3-9.1-20.4-20.3-20.4z" />
+                            <path
+                                d="M400.4,82.8L384.1,99c-8,8-8,20.9,0,28.9s20.9,8,28.9,0l16.2-16.2c8-8,8-20.9,0-28.9S408.3,74.8,400.4,82.8z" />
+                            <path
+                                d="m99,384.1l-16.2,16.2c-8,8-8,20.9 0,28.9 8,8 20.9,8 28.9,0l16.2-16.2c8-8 8-20.9 0-28.9s-20.9-7.9-28.9,0z" />
+                            <path
+                                d="m413,384.1c-8-8-20.9-8-28.9,0-8,8-8,20.9 0,28.9l16.2,16.2c8,8 20.9,8 28.9,0 8-8 8-20.9 0-28.9l-16.2-16.2z" />
+                            <path
+                                d="m99,127.9c8,8 20.9,8 28.9,0 8-8 8-20.9 0-28.9l-16.2-16.2c-8-8-20.9-8-28.9,0-8,8-8,20.9 0,28.9l16.2,16.2z" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+
+            <svg id="icon_moon" fill="var(--icon-moon)" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z" />
+                    <path
+                        d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z" />
+                    <path
+                        d="M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM7.37554 20.013C7.017 19.8056 6.5582 19.9281 6.3508 20.2866C6.14339 20.6452 6.26591 21.104 6.62446 21.3114L7.37554 20.013ZM2.68862 17.3755C2.89602 17.7341 3.35482 17.8566 3.71337 17.6492C4.07191 17.4418 4.19443 16.983 3.98703 16.6245L2.68862 17.3755ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447ZM12 21.25C10.3139 21.25 8.73533 20.7996 7.37554 20.013L6.62446 21.3114C8.2064 22.2265 10.0432 22.75 12 22.75V21.25ZM3.98703 16.6245C3.20043 15.2647 2.75 13.6861 2.75 12H1.25C1.25 13.9568 1.77351 15.7936 2.68862 17.3755L3.98703 16.6245Z" />
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ------------------------ MAIN ------------------------ -->
+    <main class="main">
+        <!-- TITOLO -->
+        <section class="title_bg">
+            <h1 class="big_title">EDILSERVIZI</h1>
+            <div class="brick x1 y1"></div>
+            <div class="brick x2 y1"></div>
+            <div class="brick x3 y1"></div>
+            <div class="brick x1b y2"></div>
+            <div class="brick x2b y2"></div>
+            <div class="brick x3b y2"></div>
+            <div class="brick x4b y2"></div>
+            <div class="brick x1 y3"></div>
+            <div class="brick x2 y3"></div>
+            <div class="brick x3 y3"></div>
+        </section>
+
+
+        <!-- SERVIZI -->
+        <div class="servizi_wrapper">
+            <!-- titolo -->
+            <h1 class="title">I NOSTRI SERVIZI PIU' FAMOSI</h1>
+            <!-- immagine 1 -->
+            <img src="src/img/showoff1.webp" alt="" id="service1">
+            <!-- accordion -->
+            <div class="servizi_container">
+
+                <button class="accordion">RISANAMENTO MURATURE</button>
+                <div class="panel">
+                    <p>
+                        Quando le murature presentano problemi come umidità, infiltrazioni d'acqua, crepe o degrado
+                        strutturale, noi ripariamo e ripristiniamo le
+                        murature danneggiate.
+                    </p>
+                </div>
+                <button class="accordion">MODIFICA PARETI INTERNE</button>
+                <div class="panel">
+                    <p>
+                        Trasformiamo le pareti all'interno di un
+                        edificio o di un'abitazione, sia a livello strutturale che estetico.
+                        Tra le modifiche che si possono fare ci sono:
+                    </p>
+                    <ul>
+                        <li>Aggiunta di nuove pareti</li>
+                        <li>Modifica delle dimensioni delle pareti</li>
+                        <li>Installazione di porte o finestre</li>
+                        <li>Rivestimento delle pareti</li>
+                    </ul>
+                </div>
+                <button class="accordion">RISTRUTTURAZIONE PAVIMENTAZIONE</button>
+                <div class="panel">
+                    <p>
+                        Possiamo rifare o migliorare il pavimento di un edificio. La ristrutturazione della
+                        pavimentazione è molto importante e può essere necessaria per migliorare l'aspetto estetico
+                        degli ambienti, aumentare la durabilità del pavimento o adeguarlo a nuove esigenze funzionali.
+                    </p>
+                </div>
+                <a href="servizi.html" class="more"><button>SCOPRI</button></a>
+            </div>
+            <!-- immagine 2 -->
+            <img src="src/img/showoff2.webp" alt="" id="service2">
+        </div>
+
+
+        <!-- INFO -->
+        <div class="info_container">
+            <div class="box_info">
+                <h1 class="title">
+                    COS'È EDILSERVIZI?
+                </h1>
+                <p>EDILSERVIZI è un'impresa edile che si occupa di piccoli lavori di manutenzione e restauro. Aperta per
+                    offrire un servizio che ormai non si offre più, garantisce
+                    una grande qualità della prestazione ad un prezzo ridotto.</p>
+                <a href="about.html">continua a leggere</a>
+            </div>
+        </div>
+
+
+        <!-- CONTATTI -->
+        <div class="contact_box">
+            <h1 class="title">DOVE TROVARCI</h1>
+            <ul class="contatti">
+                <li class="fa fa-map-marker"><a
+                        href="https://www.google.com/maps?ll=45.671641,11.405167&z=16&t=m&hl=it&gl=IT&mapclient=embed&q=Via+Schio,+52+36034+Malo+VI">Malo,
+                        Via Schio 52</a></li>
+                <li class="fa fa-phone"><a href="tel:+393892044898">+39 389 204 4898</a></li>
+                <li class="fa fa-envelope"><a
+                        href="mailto:edilservizi.m@gmail.com?subject=RICHIESTA%20INFORMAZIONI">edilservizi.m@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+    <!-- ------------------------ FOOTER ------------------------ -->
+    <footer class="footer">
+        <!-- logo -->
+        <div class="logo">
+            EDILSERVIZI
+        </div>
+        <hr>
+        <iframe title="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37508.688078552994!2d11.393541158656216!3d45.67391308944273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778b4feed465a89%3A0xb31614d63e135431!2sVia%20Schio%2C%2052%2C%2036034%20Malo%20VI!5e0!3m2!1sit!2sit!4v1707745678260!5m2!1sit!2sit"
+            width="90%" height="100%" style="border: solid 3px #72362f; margin-left: 5%;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <!-- copiright -->
+        <div class="copiright">© 2024 EDILSERVIZI
+            <a href="#Termini">Termini</a>
+            <a href="#Privacy">Privacy</a>
+            <a href="#Cookies">Cookies</a>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="src/scripts/navbar.js" type="text/javascript"></script>
+    <script src="src/scripts/accordion.js" type="text/javascript"></script>
+    <script>
+        let bricks = document.querySelectorAll(".brick");
+
+        for (let i = 0; i < 10; i++) {
+            bricks[i].style.animationDelay = (i / 2) + "s";
+        }
+
+    </script>
+</body>
+
+</html>
