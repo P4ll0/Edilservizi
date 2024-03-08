@@ -1,0 +1,191 @@
+/* importo il font "Roboto" */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+
+
+/* ----------------- FONTS ----------------- */
+/* fa */
+main .fa {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 1rem;
+}
+
+main .fa::before {
+    color: #BC4A3C;
+    margin-right: 10px;
+}
+
+.main .fa-map-marker:before {
+    content: "\f041";
+}
+
+.main .fa-phone:before {
+    content: "\f095";
+}
+
+.main .fa-envelope:before {
+    content: "\f0e0";
+}
+
+
+
+:root[data-theme="light"] {
+
+    --bg-headfoot-color: #ffffff;
+    --scrollbar-track-color: #acacac;
+    --text-default-color: #111;
+    --bg-default-color: #eee;
+    --bg-lighter-color: #eee;
+    --bg-darker-color: #ffffff;
+    --special-color: #994f47;
+    --default-overlay: #9191919c;
+    --link-overlay: #000000;
+    --default-button-bg: #b1b1b1;
+    --default-button-hover-bg: #aa6058;
+    --default-button-p-bg: #c9c8c8;
+    --stage-anim-color: #8d8d8d;
+    --main-title-shadow: #c5c5c5;
+
+
+    --switch-bg: #f5f5f5;
+    --switch-circle-bg: #ffd271;
+    --icon-sun: #997f44;
+    --icon-moon: #b1b0b5;
+    --left-value: .28rem;
+}
+
+:root[data-theme="dark"] {
+
+    --bg-headfoot-color: #181818;
+    --scrollbar-track-color: #333;
+    --text-default-color: #eee;
+    --bg-default-color: #000;
+    --bg-lighter-color: #111;
+    --bg-darker-color: #080808;
+    --special-color: #72362f;
+    --default-overlay: #333;
+    --link-overlay: #ffffff;
+    --default-button-bg: #222;
+    --default-button-p-bg: #333;
+    --stage-anim-color: #333;
+    --main-title-shadow: #000;
+
+
+    --switch-bg: #181818;
+    --switch-circle-bg: #333333;
+    --icon-sun: #b1b0b5;
+    --icon-moon: #4c4469;
+    --left-value: 2.853rem;
+}
+
+
+/* ----------------- GENERICO ----------------- */
+* > * {
+    transition-property: color, background-color, border-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: var(--bg-lighter-color);
+    color: var(--text-default-color);
+    max-width: 100vw;
+}
+
+/* evidenziazione */
+*::selection {
+    background: #a55348cc;
+    color: var(--text-default-color);
+}
+
+*::-moz-selection {
+    background: #a55348cc;
+    color: var(--text-default-color);
+}
+
+/* links generici */
+a {
+    color: var(--text-default-color);
+}
+
+
+
+
+/* ----------------- BODY (main) ----------------- */
+
+.main {
+    min-height: calc(100vh - 51px);
+    padding-top: 4rem;
+}
+
+/* SCROLL TEXT INFINITO (lo metto sotto all'header nel main di solito) */
+/* container generico (non spaziato dall'header) */
+.main #container {
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+/* container della home (gia spaziato dall'header) */
+.main #home_container {
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.main .stage_animation {
+    padding: 0;
+    white-space: nowrap;
+    display: inline-block;
+    background-color: var(--bg-lighter-color);
+}
+
+.main .stage_animation p {
+    margin: 0 1rem;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 10rem;
+    color: var(--stage-anim-color);
+}
+
+.stage_animation {
+    animation: stage_animation 10s linear infinite;
+}
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+
+@media (min-width: 1281px) {
+
+    /* generico */
+    .main {
+        font-size: large;
+        padding-top: 0;
+    }
+}
+
+
+/* ----------------- SPECIFICO ----------------- */
+.color_red {
+    color: var(--special-color);
+}
+
+
+/* ----------------- ANIMAZIONI ----------------- */
+@keyframes stage_animation {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}

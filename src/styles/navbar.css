@@ -1,0 +1,305 @@
+* {
+    /* tmp */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* -------------------- CONTENITORE NAVBAR -------------------- */
+.header {
+    background-color: var(--bg-headfoot-color);
+    color: var(--text-default-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 3.6rem;
+}
+
+
+/* -------------------- NOME AZIENDA -------------------- */
+/* contenitore nome */
+.header .logo {
+    float: left;
+    font-size: 2rem;
+    height: 100%;
+    color: var(--special-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo::before {
+    content: "";
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 10px;
+    background-image: url(../img/Loghi-EDILSERVIZI/Medium/Logo_bordeaux.webp);
+    background-position: 0 0;
+    background-size: contain;
+}
+
+
+/* -------------------- HAMBURGER MENU -------------------- */
+/* contenitore menu (label) */
+.header .menu_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    z-index: 102;
+}
+
+/* logo del menu */
+.header .menu_icon .nav_icon {
+    height: 6%;
+    width: 50%;
+    background: var(--text-default-color);
+    position: absolute;
+    border-radius: 10rem;
+}
+
+.header .menu_icon .nav_icon:before,
+.header .menu_icon .nav_icon:after {
+    background: var(--text-default-color);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    transition: all .2s ease-out;
+    border-radius: 10rem;
+}
+
+.header .menu_icon .nav_icon:before {
+    top: 250%;
+}
+
+.header .menu_icon .nav_icon::after {
+    bottom: 250%;
+}
+
+
+/* -------------------- MENU -------------------- */
+/* overlay del menu */
+.header .menu_overlay {
+    background: transparent;
+    width: 0;
+    height: 100vh;
+}
+
+/* contenitore del menu (ul) */
+.header .menu {
+    background-color: var(--bg-headfoot-color);
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    height: 100vh;
+    width: 0;
+    transition: all .2s ease-out;
+    text-align: left;
+
+    position: absolute;
+    z-index: 98;
+    top: 0;
+    padding-top: 3.6rem;
+}
+
+/* links del menu (li) */
+.header .menu a {
+    display: block;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    outline-style: none;
+    text-decoration: none;
+    color: var(--text-default-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* link del menu della pagine corrente (es home in index.html) */
+.header .menu #current {
+    background: var(--special-color);
+    position: relative;
+    text-shadow: var(--main-title-shadow) 0 0 2px;
+}
+
+/* nascondo la checkbox */
+.header .menuBTN {
+    display: none;
+}
+
+
+/* -------------------- SCOMPARSA MENU -------------------- */
+.header .menuBTN:checked~.menu_overlay .menu {
+    width: 70vw;
+    z-index: 100;
+}
+
+.header .menuBTN:checked~.header {
+    background-color: transparent;
+}
+
+.header .menuBTN:checked~.menu_overlay {
+    background: #0000009c;
+    position: absolute;
+    z-index: 99;
+    width: 100vw;
+}
+
+/* creo la X al posto dell'hamburger menu */
+.header .menuBTN:checked~.menu_icon .nav_icon {
+    background-color: transparent;
+    animation: spin .5s ease 0s 1;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::before {
+    rotate: -45deg;
+    top: 0;
+}
+
+.header .menuBTN:checked~.menu_icon .nav_icon::after {
+    rotate: 45deg;
+    top: 0;
+}
+
+
+/* ----------------- SCROLL BAR DEL MENU A TENDINA (in caso di overflow) ----------------- */
+.header::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+
+/* ----------------- THEME SWITCHER ----------------- */
+.theme_switcher {
+    z-index: 200;
+    height: 36px;
+    background-color: var(--switch-bg);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: .13rem .13rem;
+    position: fixed;
+    width: 5.1rem;
+    bottom: 10px;
+    right: 10px;
+    border: solid 1px #111;
+}
+
+.theme_switcher svg {
+    z-index: 102;
+    padding: .66rem;
+}
+
+.theme_switcher::after {
+    content: "";
+    position: absolute;
+    width: 2.22rem;
+    height: 2.22rem;
+    background-color: var(--switch-circle-bg);
+    border-radius: 50px;
+    z-index: 101;
+    left: 0;
+    transform: translateX(var(--left-value));
+    transition: .25s ease-in-out;
+}
+
+
+
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+@media (min-width: 1281px) {
+    body {
+        width: 87%;
+        position: absolute;
+        right: 0;
+    }
+
+    .header {
+        width: 13%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header .logo {
+        position: absolute;
+        z-index: 102;
+        font-size: calc(1rem + 1vw);
+        padding: 2vh 0;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header .logo::before {
+        display: inline-block;
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .header .menu_icon {
+        display: none;
+    }
+
+    .header .menu_overlay,
+    .header .menu_overlay .menu {
+        width: 100%;
+    }
+
+    .header .menu_overlay .menu {
+        padding-top: 8rem;
+    }
+
+    .header .menu_overlay .menu::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 6.5vh;
+    }
+
+    .header .menu_overlay .menu a {
+        font-size: calc(.3rem + 1vw);
+        padding-left: 5%;
+        font-weight: 400;
+    }
+
+    .header .menu_overlay .menu a:hover {
+        background: var(--default-overlay);
+    }
+
+    /* ----------------- THEME SWITCHER ----------------- */
+    .theme_switcher {
+        top: 10px;
+        bottom: auto;
+    }
+}
+
+
+
+/* ----------------- ANIMAZIONI ----------------- */
+/* spin */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}

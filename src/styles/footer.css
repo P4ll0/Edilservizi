@@ -1,0 +1,136 @@
+/* -------------------- CONTENITORE FOOTER -------------------- */
+.footer {
+    position: relative;
+    background-color: var(--bg-headfoot-color);
+    color: var(--text-default-color);
+    width: 100%;
+    bottom: 0;
+    z-index: 99;
+
+    min-height: 5vh;
+}
+
+/* linea che separa il nome dell'azienda dal resto */
+.footer hr {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+
+/* -------------------- CONTENITORE "TITOLO" -------------------- */
+.footer .logo {
+    text-align: center;
+    padding: 3vh 0;
+    color: var(--special-color);
+    font-weight: bold;
+}
+
+
+/* -------------------- CONTENITORE "ORARI" -------------------- */
+.footer .orari_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer .orari_container .orari {
+    list-style-type: none;
+    text-align: right;
+    padding: .3rem;
+}
+
+.footer .orari_container .title {
+    font-size: 1rem;
+    padding: .3rem;
+}
+
+
+/* -------------------- CONTENITORE COPIRIGHT -------------------- */
+.footer .copiright {
+    clear: both;
+    font-size: calc(2vw + 3px);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    padding: 1rem 0;
+}
+
+/* links copiright */
+.footer .copiright a {
+    padding-left: 3vw;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer .copiright a:hover {
+    color: var(--special-color);
+}
+
+.footer .copiright a:focus {
+    outline: none;
+}
+
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+@media (min-width: 1281px) {
+
+    /* linea che separa il nome dell'azienda dal resto */
+    .footer hr {
+        display: none;
+    }
+
+    /* -------------------- CONTENITORE COPIRIGHT -------------------- */
+    .footer .copiright {
+        font-size: 1rem;
+    }
+
+    /* -------------------- CONTENITORE "TITOLO" -------------------- */
+    .footer .logo {
+        padding: 0 2rem;
+        height: calc(9vw);
+        max-height: calc(50px + 3vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3vw;
+    }
+
+
+    /* -------------------- CONTENITORE "ORARI" -------------------- */
+    .footer .orari_container {
+        flex-direction: row;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer .orari_container .orari {
+        margin-left: 8rem;
+    }
+}
+
+
+
+
+
+/* ----------------- SCROLL BAR ----------------- */
+
+/* al posto di html:: si puo mettere un qualsiasi elemento che ha bisogno di una scroll-bar */
+html::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* barra laterale della scrollbar */
+html::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
+
+/* barretta che si muove nella scrollbar-track */
+html::-webkit-scrollbar-thumb {
+    background: var(--special-color);
+    box-shadow: inset 0 0 5px #111;
+    border-radius: 1em;
+}

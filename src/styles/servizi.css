@@ -1,0 +1,94 @@
+/* ----------------- SPECIFICI ----------------- */
+
+/* intro ai servizi */
+.main #intro {
+    padding: 3rem 1rem;
+    text-align: center;
+    min-height: 32.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+/* ----------------- 1° PARTE (display servizi disponibili) ----------------- */
+
+.main .card_container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.main .card {
+    overflow: hidden;
+    width: 50vw;
+    min-height: 35vh;
+    position: relative;
+}
+
+.main .card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .card img {
+    width: 40vw;
+    height: 40vw;
+    border-bottom: solid .5rem var(--special-color);
+    object-fit: cover;
+}
+
+.main .card figcaption::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    top: 0;
+    background-color: #00000048;
+}
+
+.main .card figcaption {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    padding: 0 5vw;
+}
+
+
+
+
+/* ----------------- DESKTOP GUI ----------------- */
+
+@media (min-width: 1281px) {
+
+    /* intro ai servizi */
+    .main #intro {
+        min-height: 46.2vh;
+    }
+
+    /* ----------------- 1° PARTE (display servizi disponibili) ----------------- */
+
+    .main .card {
+        width: 40vw;
+        min-height: 50vh;
+        padding-bottom: 3rem;
+    }
+
+    .main .card figcaption {
+        font-size: 2.3rem;
+        font-weight: 500;
+        padding: 0 2.5vw;
+    }
+
+    .main .card figcaption::before {
+        width: 35vw;
+        height: 35vw;
+        left: 2.5vw;
+    }
+
+    .main .card img {
+        width: 35vw;
+        height: 35vw;
+    }
+}
